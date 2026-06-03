@@ -1,0 +1,76 @@
+.admin-dashbord-page {
+  padding: 20px;
+  background-color: #a0c878;
+  width: 100%;
+  height: 100vh;
+
+  h1 {
+    color: maroon;
+    font-family: "Goblin One", serif;
+    text-shadow: 2px 2px 1px #f9fdbc;
+    font-size: 28px;
+  }
+  p {
+    color: #0e4f64f7;
+    font-family:
+      "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 18px;
+  }
+  hr {
+    border: none;
+    border-top: 2px solid #f7e768;
+  }
+  .admin-menu {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 200px;
+    background-color: #ddeb9d;
+    padding: 20px;
+    border-radius: 10px;
+
+    li {
+      list-style: none;
+      padding: 10px;
+      background-color: #795548;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: "Farro", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      text-shadow: 2px 2px 20px #000000b3;
+      margin-top: 10px;
+      &:hover {
+        background-color: #6d4c41;
+      }
+    }
+
+    button {
+      background-color: #4caf4f84;
+      color: rgb(28, 67, 20);
+      border: none;
+      font-family: monospace;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 10px;
+    }
+    h2 {
+      color: #0e4f64f7;
+      font-family: monospace;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .admin-menu {
+    width: 100%;
+  }
+  .admincontainer {
+    width: 100%;
+  }
+}

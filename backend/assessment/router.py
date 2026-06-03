@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from db import get_db
 from sqlalchemy.orm import session
-from Assessment.controller import get_total_users
+from assessment.controller import get_total_users
 
 assessment = Blueprint("assessment", __name__)
 

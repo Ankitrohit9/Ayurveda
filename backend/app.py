@@ -6,7 +6,7 @@ from auth.router import auth
 from admin.router import admin
 from report.router import report
 from reportQuestion.router import question
-from Assessment.router import assessment
+from assessment.router import assessment
 
 app = Flask(__name__)
 CORS(app)

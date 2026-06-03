@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import "./design/admin.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function AdminForgotPasswordOTP() {
@@ -18,7 +19,7 @@ function AdminForgotPasswordOTP() {
         {
           email,
           otp,
-        }
+        },
       );
 
       alert(response.data.message);
@@ -32,23 +33,25 @@ function AdminForgotPasswordOTP() {
   };
 
   return (
-    <div>
-      <h1>Admin OTP Verify</h1>
-      <p>OTP sent to: {email}</p>
+    <div className="adminpage">
+      <div className="admincontainer">
+        <h1>Admin OTP Verify</h1>
+        <p>OTP sent to: {email}</p>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter OTP"
-          value={otp}
-          onChange={(e) => setOtp(e.target.value)}
-        />
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Enter OTP"
+            value={otp}
+            onChange={(e) => setOtp(e.target.value)}
+          />
 
-        <br />
-        <br />
+          <br />
+          <br />
 
-        <button type="submit">Verify OTP</button>
-      </form>
+          <button type="submit">Verify OTP</button>
+        </form>
+      </div>
     </div>
   );
 }

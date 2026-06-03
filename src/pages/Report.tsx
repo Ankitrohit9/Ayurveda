@@ -5,7 +5,7 @@ import "./design/report.css";
 import leaf from "../assets/leaf.png";
 import martar from "../assets/mortar.png";
 import leaves from "../assets/leaves.png";
-import vintage from "../assets/vintage.png";
+
 interface YogaPose {
   name: string;
   description: string;

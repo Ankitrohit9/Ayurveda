@@ -1,133 +1,100 @@
 import { useState } from "react";
-
+import "./design/admin.css";
+import insect from "../../assets/insect.png";
+import plant from "../../assets/plant.png";
+import tulips from "../../assets/tulips.png";
+import flower from "../../assets/flowers.png";
 import axios from "axios";
 
-import {
-
-  useNavigate,
-
-  Link
-
-} from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function AdminLogin() {
-
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
 
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async (
-
-    e: React.FormEvent<HTMLFormElement>
-
-  ) => {
-
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-
       const response = await axios.post(
-
         "http://127.0.0.1:5000/api/admin/login",
 
         {
           email: email,
-          password: password
-        }
-
+          password: password,
+        },
       );
 
       // STORE ADMIN LOGIN
-      localStorage.setItem(
-        "adminLoggedIn",
-        "true"
-      );
+      localStorage.setItem("adminLoggedIn", "true");
 
-      localStorage.setItem(
-        "adminEmail",
-        email
-      );
+      localStorage.setItem("adminEmail", email);
 
       alert(response.data.message);
 
       // REDIRECT DASHBOARD
       navigate("/admin/dashboard");
-
     } catch (error: any) {
-
-      alert(
-
-        error.response?.data?.message ||
-
-        "Admin Login Failed"
-
-      );
-
+      alert(error.response?.data?.message || "Admin Login Failed");
     }
-
   };
 
   return (
+    <div className="adminpage">
+      <div className="insect">
+        <img src={insect} alt="Insect" />
+      </div>
+      <div className="plant">
+        <img src={plant} alt="Plant" />
+      </div>
+      <div className="tulips">
+        <img src={tulips} alt="Tulips" />
+      </div>
 
-    <div>
+      <div className="admincontainer">
+        <h1>Admin Login</h1>
 
-      <h1>Admin Login</h1>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="Enter Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-      <form onSubmit={handleSubmit}>
+          <br />
+          <br />
 
-        <input
-          type="email"
-          placeholder="Enter Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+          <input
+            type="password"
+            placeholder="Enter Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
+          <br />
+          <br />
+
+          <button type="submit">Login</button>
+        </form>
+
+        <br />
+
+        {/* FORGOT PASSWORD */}
+
+        <Link to="/admin/forgot-password">Forgot Password?</Link>
 
         <br />
         <br />
 
-        <input
-          type="password"
-          placeholder="Enter Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        {/* SIGNUP */}
 
-        <br />
-        <br />
-
-        <button type="submit">
-
-          Login
-
-        </button>
-
-      </form>
-
-      <br />
-
-      {/* FORGOT PASSWORD */}
-
-      <Link to="/admin/forgot-password">
-
-        Forgot Password?
-
-      </Link>
-
-      <br />
-      <br />
-
-      {/* SIGNUP */}
-
-      <Link to="/admin/signup">
-
-        Create Admin Account
-
-      </Link>
-
+        <Link to="/admin/signup">Create Admin Account</Link>
+      </div>
     </div>
-
   );
 }
 

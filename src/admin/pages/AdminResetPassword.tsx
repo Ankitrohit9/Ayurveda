@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import "./design/admin.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function AdminResetPassword() {
@@ -24,7 +25,7 @@ function AdminResetPassword() {
         {
           email,
           new_password: newPassword,
-        }
+        },
       );
 
       alert(response.data.message);
@@ -36,32 +37,34 @@ function AdminResetPassword() {
   };
 
   return (
-    <div>
-      <h1>Admin Reset Password</h1>
+    <div className="adminpage">
+      <div className="admincontainer">
+        <h1>Admin Reset Password</h1>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="password"
-          placeholder="New Password"
-          value={newPassword}
-          onChange={(e) => setNewPassword(e.target.value)}
-        />
+        <form onSubmit={handleSubmit}>
+          <input
+            type="password"
+            placeholder="New Password"
+            value={newPassword}
+            onChange={(e) => setNewPassword(e.target.value)}
+          />
 
-        <br />
-        <br />
+          <br />
+          <br />
 
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
 
-        <br />
-        <br />
+          <br />
+          <br />
 
-        <button type="submit">Reset Password</button>
-      </form>
+          <button type="submit">Reset Password</button>
+        </form>
+      </div>
     </div>
   );
 }

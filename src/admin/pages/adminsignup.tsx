@@ -1,11 +1,13 @@
 import { useState } from "react";
-
+import "./design/admin.css";
+import insect from "../../assets/insect.png";
+import plant from "../../assets/plant.png";
+import tulips from "../../assets/tulips.png";
 import axios from "axios";
 
 import { useNavigate } from "react-router-dom";
 
 function AdminSignup() {
-
   const navigate = useNavigate();
 
   const [fullName, setFullName] = useState("");
@@ -14,98 +16,81 @@ function AdminSignup() {
 
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async (
-    e: React.FormEvent<HTMLFormElement>
-  ) => {
-
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-
       const response = await axios.post(
-
         "http://127.0.0.1:5000/api/admin/signup",
 
         {
           full_name: fullName,
           email: email,
-          password: password
-        }
-
+          password: password,
+        },
       );
 
       alert(response.data.message);
 
       navigate("/admin/otp-verify", {
-
         state: {
-          email: email
-        }
-
+          email: email,
+        },
       });
-
     } catch (error: any) {
-
-      alert(
-
-        error.response?.data?.message ||
-
-        "Signup Failed"
-
-      );
-
+      alert(error.response?.data?.message || "Signup Failed");
     }
-
   };
 
   return (
+    <div className="adminpage">
+      <div className="insect">
+        <img src={insect} alt="Insect" />
+      </div>
+      <div className="plant">
+        <img src={plant} alt="Plant" />
+      </div>
+      <div className="tulips">
+        <img src={tulips} alt="Tulips" />
+      </div>
+      <div className="admincontainer">
+        <h1>Admin Signup</h1>
 
-    <div>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Full Name"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+          />
 
-      <h1>Admin Signup</h1>
+          <br />
+          <br />
 
-      <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-        <input
-          type="text"
-          placeholder="Full Name"
-          value={fullName}
-          onChange={(e) => setFullName(e.target.value)}
-        />
+          <br />
+          <br />
 
-        <br />
-        <br />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+          <br />
+          <br />
 
-        <br />
-        <br />
-
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-
-        <br />
-        <br />
-
-        <button type="submit">
-
-          Signup
-
-        </button>
-
-      </form>
-
+          <button type="submit">Signup</button>
+        </form>
+      </div>
     </div>
-
   );
 }
 

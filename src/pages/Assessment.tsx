@@ -103,7 +103,6 @@ const Assessment: React.FC = () => {
       // Navigate to report page with results
       navigate("/report", { state: response.data });
     } catch (err) {
-
       setError(
         "Failed to submit assessment. Please ensure the backend server is running on port 5000.",
       );
@@ -140,14 +139,14 @@ const Assessment: React.FC = () => {
           <div className="arrow" style={{ marginTop: "170rem" }}>
             <img src={arrow} height={"90px"} alt="Scroll down" />
           </div>
-          <div className="leaf">
-            <img src={leaf} alt="Leaf" style={{}} />
+          <div className="leaf1">
+            <img src={leaf} alt="leaf" />
           </div>
-          <div className="martar">
-            <img src={martar} alt="martar" height={"400px"} style={{}} />
+          <div className="martar1">
+            <img src={martar} alt="martar" height={"400px"} />
           </div>
-          <div className="leaves">
-            <img src={leaves} alt="leaves" style={{}} />
+          <div className="leaves1">
+            <img src={leaves} alt="leaves" />
           </div>
 
           {/* Header */}
@@ -249,8 +248,8 @@ const Assessment: React.FC = () => {
                       top: "2px",
                     }}
                   />
-                  <strong>A:</strong> Thin, light frame - either tall and lanky or
-                  short and petite, difficulty gaining weight
+                  <strong>A:</strong> Thin, light frame - either tall and lanky
+                  or short and petite, difficulty gaining weight
                 </label>
                 <label
                   className="radio-input"
@@ -279,8 +278,8 @@ const Assessment: React.FC = () => {
                       top: "2px",
                     }}
                   />
-                  <strong>B:</strong> Medium, athletic build - well-proportioned,
-                  moderate muscle development
+                  <strong>B:</strong> Medium, athletic build -
+                  well-proportioned, moderate muscle development
                 </label>
                 <label
                   className="radio-input"
@@ -439,8 +438,8 @@ const Assessment: React.FC = () => {
                       top: "2px",
                     }}
                   />
-                  <strong>A:</strong> Dry, frizzy, thin, brittle - prone to split
-                  ends and breakage
+                  <strong>A:</strong> Dry, frizzy, thin, brittle - prone to
+                  split ends and breakage
                 </label>
                 <label
                   className="radio-input"
@@ -469,8 +468,8 @@ const Assessment: React.FC = () => {
                       top: "2px",
                     }}
                   />
-                  <strong>B:</strong> Fine, soft, early greying or balding - light
-                  colored, silky texture
+                  <strong>B:</strong> Fine, soft, early greying or balding -
+                  light colored, silky texture
                 </label>
                 <label
                   className="radio-input"
@@ -518,7 +517,9 @@ const Assessment: React.FC = () => {
                     padding: "8px",
                     borderRadius: "4px",
                     backgroundColor:
-                      formData.weightPattern === "A" ? "#e8f5e9" : "transparent",
+                      formData.weightPattern === "A"
+                        ? "#e8f5e9"
+                        : "transparent",
                   }}
                 >
                   <input
@@ -548,7 +549,9 @@ const Assessment: React.FC = () => {
                     padding: "8px",
                     borderRadius: "4px",
                     backgroundColor:
-                      formData.weightPattern === "B" ? "#e8f5e9" : "transparent",
+                      formData.weightPattern === "B"
+                        ? "#e8f5e9"
+                        : "transparent",
                   }}
                 >
                   <input
@@ -578,7 +581,9 @@ const Assessment: React.FC = () => {
                     padding: "8px",
                     borderRadius: "4px",
                     backgroundColor:
-                      formData.weightPattern === "C" ? "#e8f5e9" : "transparent",
+                      formData.weightPattern === "C"
+                        ? "#e8f5e9"
+                        : "transparent",
                   }}
                 >
                   <input
@@ -627,7 +632,9 @@ const Assessment: React.FC = () => {
 
               {/* Question 5 */}
               <fieldset>
-                <legend className="legends">5. Appetite & Hunger Patterns</legend>
+                <legend className="legends">
+                  5. Appetite & Hunger Patterns
+                </legend>
                 <label
                   style={{
                     display: "block",
@@ -654,8 +661,8 @@ const Assessment: React.FC = () => {
                       top: "2px",
                     }}
                   />
-                  <strong>A:</strong> Irregular appetite - sometimes very hungry,
-                  sometimes not hungry at all
+                  <strong>A:</strong> Irregular appetite - sometimes very
+                  hungry, sometimes not hungry at all
                 </label>
                 <label
                   style={{
@@ -828,7 +835,9 @@ const Assessment: React.FC = () => {
                     name="thirst"
                     value="A"
                     checked={formData.thirst === "A"}
-                    onChange={(e) => handleRadioChange("thirst", e.target.value)}
+                    onChange={(e) =>
+                      handleRadioChange("thirst", e.target.value)
+                    }
                     style={{
                       marginRight: "10px",
                       marginTop: "5px",
@@ -855,7 +864,9 @@ const Assessment: React.FC = () => {
                     name="thirst"
                     value="B"
                     checked={formData.thirst === "B"}
-                    onChange={(e) => handleRadioChange("thirst", e.target.value)}
+                    onChange={(e) =>
+                      handleRadioChange("thirst", e.target.value)
+                    }
                     style={{
                       marginRight: "10px",
                       marginTop: "5px",
@@ -882,7 +893,9 @@ const Assessment: React.FC = () => {
                     name="thirst"
                     value="C"
                     checked={formData.thirst === "C"}
-                    onChange={(e) => handleRadioChange("thirst", e.target.value)}
+                    onChange={(e) =>
+                      handleRadioChange("thirst", e.target.value)
+                    }
                     style={{
                       marginRight: "10px",
                       marginTop: "5px",
@@ -951,8 +964,8 @@ const Assessment: React.FC = () => {
                       top: "2px",
                     }}
                   />
-                  <strong>A:</strong> Quick, restless mind - creative, scattered,
-                  many ideas, worry easily
+                  <strong>A:</strong> Quick, restless mind - creative,
+                  scattered, many ideas, worry easily
                 </label>
                 <label
                   style={{
@@ -1101,8 +1114,8 @@ const Assessment: React.FC = () => {
                       top: "2px",
                     }}
                   />
-                  <strong>C:</strong> Deep, heavy sleep - sleep 8+ hours, hard to
-                  wake up, love sleeping
+                  <strong>C:</strong> Deep, heavy sleep - sleep 8+ hours, hard
+                  to wake up, love sleeping
                 </label>
               </fieldset>
 
@@ -1227,8 +1240,8 @@ const Assessment: React.FC = () => {
                   marginBottom: "20px",
                 }}
               >
-                Select all symptoms you experience regularly (multiple selections
-                allowed)
+                Select all symptoms you experience regularly (multiple
+                selections allowed)
               </p>
 
               <div

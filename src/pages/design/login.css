@@ -39,7 +39,6 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-
   position: relative;
   animation: fadeIn 2s ease;
 }

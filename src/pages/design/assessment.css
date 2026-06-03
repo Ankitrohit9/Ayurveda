@@ -61,7 +61,7 @@ fieldset {
   background-color: #aeb78454;
 }
 
-.leaf {
+.leaf1 {
   position: absolute;
   top: 20rem;
   left: 60rem;
@@ -101,7 +101,7 @@ input[type="radio"] {
   margin-bottom: 5px;
   padding: 20px;
 }
-.martar {
+.martar1 {
   position: absolute;
   top: 100rem;
   left: -20rem;
@@ -120,7 +120,7 @@ input[type="radio"] {
   }
 }
 
-.leaves {
+.leaves1 {
   position: absolute;
   top: 205rem;
   left: 50rem;

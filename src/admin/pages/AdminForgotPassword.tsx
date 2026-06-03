@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import "./design/admin.css";
 import { useNavigate } from "react-router-dom";
 
 function AdminForgotPassword() {
@@ -12,7 +13,7 @@ function AdminForgotPassword() {
     try {
       const response = await axios.post(
         "http://127.0.0.1:5000/api/admin/forgot-password",
-        { email }
+        { email },
       );
 
       alert(response.data.message);
@@ -26,22 +27,24 @@ function AdminForgotPassword() {
   };
 
   return (
-    <div>
-      <h1>Admin Forgot Password</h1>
+    <div className="adminpage">
+      <div className="admincontainer">
+        <h1>Admin Forgot Password</h1>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Enter admin email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="Enter admin email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-        <br />
-        <br />
+          <br />
+          <br />
 
-        <button type="submit">Send OTP</button>
-      </form>
+          <button type="submit">Send OTP</button>
+        </form>
+      </div>
     </div>
   );
 }
