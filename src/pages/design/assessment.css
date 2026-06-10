@@ -166,7 +166,7 @@ input[type="radio"] {
     }
   }
 
-  .leaf {
+  .leaf1 {
     top: 40rem;
     left: 11rem;
     img {
@@ -174,15 +174,15 @@ input[type="radio"] {
       width: 400px;
     }
   }
-  .martar {
-    top: 160rem;
+  .martar1 {
+    top: 212rem;
     left: -6rem;
     img {
       height: 200px;
       width: 200px;
     }
   }
-  .leaves {
+  .leaves1 {
     top: 320rem;
     left: 10rem;
     img {

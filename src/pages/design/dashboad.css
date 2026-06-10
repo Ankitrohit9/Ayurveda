@@ -13,8 +13,8 @@ body {
 /* MAIN CONTAINER */
 .dashboard-container {
   min-height: 100vh;
-  position: relative;
   overflow: hidden;
+  position: absolute;
   padding: 20px 50px;
 }
 
@@ -22,19 +22,17 @@ body {
 .dashboard-container::before {
   content: "";
   position: absolute;
-  inset: -60%;
+  inset: -55%;
   background-image: url("../../assets/main.jpg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   transform: rotate(90deg);
   transform-origin: center;
-  z-index: 0;
 }
 
 .dashboard-container > * {
   position: relative;
-  z-index: 1;
 }
 
 /* HEADER */

@@ -92,7 +92,7 @@ const Report: React.FC = () => {
 
     try {
       // Show loading state
-      const originalContent = reportRef.current.innerHTML;
+      //const originalContent = reportRef.current.innerHTML;
       const loadingDiv = document.createElement("div");
       loadingDiv.innerHTML =
         '<div style="text-align: center; padding: 50px; font-size: 20px; color: #2196F3;">Generating your Ayurvedic Report PDF...</div>';
@@ -361,7 +361,7 @@ const Report: React.FC = () => {
       pdf.setFontSize(10);
       pdf.setFont("helvetica", "normal");
       pdf.setTextColor(0, 0, 0);
-      result.foodsToPrefer.forEach((food, index) => {
+      result.foodsToPrefer.forEach((food) => {
         if (yPos > pageHeight - 30) {
           pdf.addPage();
           yPos = 20;
@@ -387,7 +387,7 @@ const Report: React.FC = () => {
       pdf.setFontSize(10);
       pdf.setFont("helvetica", "normal");
       pdf.setTextColor(0, 0, 0);
-      result.foodsToAvoid.forEach((food, index) => {
+      result.foodsToAvoid.forEach((food) => {
         if (yPos > pageHeight - 30) {
           pdf.addPage();
           yPos = 20;
@@ -413,7 +413,7 @@ const Report: React.FC = () => {
       pdf.setFontSize(10);
       pdf.setFont("helvetica", "normal");
       pdf.setTextColor(0, 0, 0);
-      result.herbs.forEach((herb, index) => {
+      result.herbs.forEach((herb) => {
         if (yPos > pageHeight - 30) {
           pdf.addPage();
           yPos = 20;
@@ -439,7 +439,7 @@ const Report: React.FC = () => {
       pdf.setFontSize(10);
       pdf.setFont("helvetica", "normal");
       pdf.setTextColor(0, 0, 0);
-      result.drinks.forEach((drink, index) => {
+      result.drinks.forEach((drink) => {
         if (yPos > pageHeight - 30) {
           pdf.addPage();
           yPos = 20;
@@ -536,7 +536,7 @@ const Report: React.FC = () => {
       pdf.setFontSize(10);
       pdf.setFont("helvetica", "normal");
       pdf.setTextColor(0, 0, 0);
-      result.lifestyleTips.forEach((tip, index) => {
+      result.lifestyleTips.forEach((tip) => {
         if (yPos > pageHeight - 30) {
           pdf.addPage();
           yPos = 20;
@@ -563,7 +563,7 @@ const Report: React.FC = () => {
       pdf.setFontSize(10);
       pdf.setFont("helvetica", "normal");
       pdf.setTextColor(0, 0, 0);
-      result.morningRoutine.forEach((item, index) => {
+      result.morningRoutine.forEach((item) => {
         if (yPos > pageHeight - 30) {
           pdf.addPage();
           yPos = 20;
@@ -590,7 +590,7 @@ const Report: React.FC = () => {
       pdf.setFontSize(10);
       pdf.setFont("helvetica", "normal");
       pdf.setTextColor(0, 0, 0);
-      result.nightRoutine.forEach((item, index) => {
+      result.nightRoutine.forEach((item) => {
         if (yPos > pageHeight - 30) {
           pdf.addPage();
           yPos = 20;
@@ -634,7 +634,7 @@ const Report: React.FC = () => {
       pdf.setFontSize(10);
       pdf.setFont("helvetica", "normal");
       pdf.setTextColor(0, 0, 0);
-      result.stressManagement.forEach((practice, index) => {
+      result.stressManagement.forEach((practice) => {
         if (yPos > pageHeight - 80) {
           pdf.addPage();
           yPos = 20;

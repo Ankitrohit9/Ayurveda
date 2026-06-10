@@ -80,6 +80,8 @@ function Login() {
 
           <div className="login-links">
             <Link to="/forgot-password">Forgot Password?</Link>
+            <br></br>
+            <Link to="/admin/login">Administrator Account</Link>
           </div>
         </form>
       </div>

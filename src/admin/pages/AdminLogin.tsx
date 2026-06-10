@@ -3,7 +3,6 @@ import "./design/admin.css";
 import insect from "../../assets/insect.png";
 import plant from "../../assets/plant.png";
 import tulips from "../../assets/tulips.png";
-import flower from "../../assets/flowers.png";
 import axios from "axios";
 
 import { useNavigate, Link } from "react-router-dom";
